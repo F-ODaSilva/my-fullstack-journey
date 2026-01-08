@@ -1,9 +1,10 @@
-Full-Stack Journey/
+my-fullstack-journey/
 │
 ├── 00-introduction/
 │   ├── README.md
 │   ├── learning-goals.md
-│   └── setup-environment.md
+│   ├── setup-environment.md
+│   └── roadmap.md
 │
 ├── 01-html-css/
 │   ├── README.md
