@@ -23,12 +23,13 @@ my-fullstack-journey/
 │   ├── 01-js-basics/
 │   ├── 02-control-flow/
 │   ├── 03-functions/
-│   ├── 04-arrays-objects/
-│   ├── 05-dom/
-│   ├── 06-events/
-│   ├── 07-async-js/
+│   ├── 04-arrays/
+│   ├── 05-objects/
+│   ├── 06-json/
+│   ├── 07-jquery/
 │   ├── 08-modules/
-│   └── 09-typescript/
+│   ├── 09-async-js/
+│   └── 10-typescript/
 │
 ├── 03-git-github/
 │   ├── README.md
