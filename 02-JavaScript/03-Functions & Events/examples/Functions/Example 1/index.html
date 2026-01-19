@@ -1,0 +1,400 @@
+<!--
+================================================================================
+JAVASCRIPT FUNCTIONS DEMO - COMPREHENSIVE OVERVIEW
+================================================================================
+
+PURPOSE:
+This script demonstrates core JavaScript function concepts based on the "Scripting & Function Basics" documentation. It provides practical examples of function declarations expressions, arrow functions, and DOM interaction.
+
+STRUCTURE:
+The code is organized into logical sections that correspond directly to the learning material:
+1. Function Declarations (with parameters)
+2. Window Object Methods
+3. Time Display Function
+4. Scope Demonstration (global, local, block)
+5. Variable Assignment via Function Invocation
+6. Anonymous Functions
+7. Function Expressions
+8. Arrow Functions
+9. DOM Selection Methods (Selection, Context, Structural)
+10. Helper Functions
+
+DESIGN PHILOSOPHY:
+Each section is clearly marked with comments and console.log statements to provide visibility into function execution. This structure allows learners to understand how different JavaScript concepts work together in a real-world application context.
+
+IMPORTANT NOTE:
+Console outputs will display automatically when the page opens. Clear the browser console (F12) using Ctrl+L (Windows/Linux) or Cmd+K (Mac) for better readability after reviewing the initial outputs.
+
+================================================================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Functions Demo</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .container-custom {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      padding: 40px;
+      max-width: 600px;
+    }
+
+    .btn-custom {
+      margin: 8px 4px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-custom:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .time-display {
+      font-size: 24px;
+      font-weight: bold;
+      color: #667eea;
+      margin: 20px 0;
+    }
+
+    .console-output {
+      background: #f8f9fa;
+      border-left: 4px solid #667eea;
+      padding: 12px;
+      margin: 15px 0;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-custom">
+    <h1 class="text-center mb-4">JavaScript Functions Demo</h1>
+
+    <p class="text-muted">
+      This page demonstrates JavaScript function declarations, scope, arrow functions, and window object methods.
+      Open your browser console (F12) to see detailed console.log outputs. Clear the console after reviewing the initial outputs for better readability.
+    </p>
+
+    <!-- CURRENT DISPLAY SECTION -->
+    <div class="time-display text-center">
+      Current Time: <span id="timeDisplay">--:--:--</span>
+      <!-- It is necessary to create an after the string inside the div to display the time -->
+    </div>
+
+    <!-- INTERACTIVE BUTTONS SECTION -->
+    <!-- This section will encapsulate a group of buttons that will hold inline event handlers (click event) each with each respective functions -->
+    <div class="d-flex flex-wrap justify-content-center gap-2">
+      <button class="btn btn-primary btn-custom" onclick="displayCurrentTime()">
+        Show Current Time
+      </button>
+      <button class="btn btn-success btn-custom" onclick="openGoogleSearch()">
+        Open Google Search
+      </button>
+      <button class="btn btn-info btn-custom" onclick="demonstrateScope()">
+        Show Scope Demo
+      </button>
+      <button class="btn btn-warning btn-custom" onclick="runAnonymousFunction()">
+        Run Anonymous Function
+      </button>
+      <button class="btn btn-danger btn-custom" onclick="runFunctionExpression()">
+        Run Function Expression
+      </button>
+      <button class="btn btn-secondary btn-custom" onclick="runArrowFunction()">
+        Run Arrow Function
+      </button>
+      <button class="btn btn-dark btn-custom" onclick="demonstrateSelection()">
+        DOM Selection Methods
+      </button>
+    </div>
+
+    <!-- INFO DISPLAY AREA -->
+    <!-- The code bellow will pass every event result from the button section when an event is triggered -->
+    <div id="outputArea" class="mt-4">
+      <p class="text-muted text-center">Click buttons to see results...</p>
+    </div>
+  </div>
+
+  <script>
+    // ============================================
+    // 1. SIMPLE FUNCTION DECLARATION
+    // ============================================
+
+    // Function declarations are created with the function keyword and can be called before they are defineddue to hoisting.
+    console.log("=== Function Declarations Demo ===");
+
+    // Function Declaration with single parameter
+    function greet(name) {
+      console.log(`Function Declaration: Hello, ${name}!`);
+      return `Greeting: ${name}`;
+    }
+
+    // Function with multiple parameters
+    function add(num1, num2) { // num1 & num2 are the parameters of this function
+      console.log(
+        `Adding ${num1} + ${num2} = ${num1 + num2}`
+        ); // Thvey can be passed inside the function as variables that contain values that are passed by the user outisde, when function is called.
+      return num1 + num2; //It will return or save the expression as the result of the function
+    }
+
+    // ============================================
+    // 2. WINDOW OBJECT METHODS
+    // ============================================
+    console.log("=== Window Object Methods ===");
+
+    // Function that opens a URL (won't actually open in this environment)
+    function openGoogleSearch() {
+      console.log("Attempting to open Google Search in new window...");
+      // Commented out to prevent multiple windows in this environment
+      // window.open('https://www.google.com', '_blank'); // This will open the link in a new tab in your browser.
+
+      // Instead, showing what would happen:
+      displayMessage("✅ Would open: https://www.google.com in new window"); // Outputs message into the browser page and not in the console.
+      alert("Opening Google Search would open in a new window!"); // A modal will pop up with the message inside the alert
+    }
+
+    // Function to close window
+    function closeWindow() {
+      console.log("Close window function called");
+      // Commented to prevent closing in demo
+      // window.close();
+      displayMessage("✅ Window close command executed (prevented in demo)"); // Outputs message into the browser page and not in the console.
+    }
+
+    // ============================================
+    // 3. DISPLAY CURRENT TIME FUNCTION
+    // ============================================
+    console.log("=== Time Display Function ===");
+
+    // Create function that will create dispaly the current time based on my systems time.
+    function displayCurrentTime() {
+      const now = new Date(); //Assign present time to variable
+      const timeStringFull = now.toLocaleTimeString(); // Full time string that gives hours:minutes:seconds 
+      /* 
+      padStart is a string method that adds characters to the beginnig(left side) of a string unyil it reaches a specific lenght.
+        if hour is 7, it will become "07"
+        if hour is 12, it will be "12"
+      Make this string padstart(2, 0) it tells JavaScript that the  string is 2 characters long byt adding "0" to the start. Where "2" is the desired lenght & "0" is the character to add for padding. This is helpful for amore consistent look.
+      The String() converst the values inside the parentheses int
+      */
+      const hours = String(now.getHours()).padStart(2, '0'); // getHours() returns a single digit between 0 - 23 
+      const minutes = String(now.getMinutes()).padStart(2, '0'); // getMinutes() returns a single digit between 0 - 59
+      const timeStringMinutes =
+      `${hours}:${minutes}`; // Variable that holds a string of variables so time can be displayed.
+
+      console.log(`Current Time: ${timeStringMinutes}`); // Console logs time only hours & minutes
+      document.getElementById('timeDisplay').textContent = timeStringFull; // Display shows full time with seconds
+      displayMessage(`✅ Time Updated: ${timeStringFull}`); // Outputs message with the value of the variable "timeStringFull" into the browser page and not in the console.
+    }
+
+    // ============================================
+    // 4. SCOPE DEMONSTRATION
+    // ============================================
+    console.log("=== Scope Demo ===");
+
+    // Global scope variable
+    let globalVar = "I am GLOBAL";
+    console.log("Global variable created:", globalVar);
+
+    function demonstrateScope() {
+      // Local scope variable
+      let localVar = "I am LOCAL";
+      const blockVar = "I am BLOCK-SCOPED";
+
+      // Log all scope variables 
+      console.log("--- Inside demonstrateScope function ---");
+      console.log("Global var:", globalVar);
+      console.log("Local var:", localVar);
+      console.log("Block var:", blockVar);
+
+      // Block scope (if statement)
+      if (true) { // THis code block is allways going to be true, so code block always will be excutable
+        let blockOnly = "Only visible in this block"; // Creates a variable inside the scope
+        console.log("Block-only var:", blockOnly); // Logs the variable to console (while still inside the block scope)
+      }
+
+      // Variable holding information with the variables inside the local (this function) and global scope
+      let message = `
+        ✅ SCOPE DEMO:
+        Global: ${globalVar}
+        Local: ${localVar}
+        Block: ${blockVar}
+        (Check console for details)
+      `;
+      displayMessage(message); // Outputs message into the browser page and not in the console.
+    }
+
+    // ============================================
+    // 5. FUNCTION INVOCATION & VARIABLE ASSIGNMENT
+    // ============================================
+    console.log("=== Function Invocation & Variable Assignment ===");
+
+    // Assign function result to variable
+    const greetingMessage = greet("Hello young padawan!");
+    console.log("Variable assignment from function:", greetingMessage);
+
+    const sum = add(15, 25); // At line number 149 the add() function is created
+    console.log("Sum stored in variable:", sum);  // Output the sum variable
+
+    // ============================================
+    // 6. ANONYMOUS FUNCTION
+    // ============================================
+    console.log("=== Anonymous Function Demo ===");
+
+    function runAnonymousFunction() {
+      // Anonymous function (IIFE - Immediately Invoked Function Expression)
+      (function () {
+        console.log("This is an ANONYMOUS FUNCTION executing immediately");
+        console.log("Anonymous functions have their own scope");
+        let anonVar = "Secret variable in anonymous function";
+        console.log(anonVar);
+      })();
+
+      displayMessage("✅ Anonymous function executed! (See console for output)"); // Outputs message into the browser page and not in the console.
+    }
+
+    // ============================================
+    // 7A. FUNCTION EXPRESSION
+    // ============================================
+    console.log("=== Function Expression Demo ===");
+
+    // Function Expression (stored in variable)
+    const multiply = function (a, b) { 
+      console.log(`Function Expression: ${a} * ${b} = ${a * b}`);
+      return a * b;
+    };
+
+    function runFunctionExpression() {
+      const result = multiply(8, 7);
+      console.log("Function expression result:", result);
+      displayMessage(`✅ Function Expression executed: 8 × 7 = ${result}`); 
+    }
+
+    // ============================================
+    // 7B. ARROW FUNCTION
+    // ============================================
+    console.log("=== Arrow Function Demo ===");
+
+    // Arrow Function (modern ES6 syntax)
+    const divide = (x, y) => {
+      console.log(`Arrow Function: ${x} / ${y} = ${x / y}`);
+      return x / y;
+    };
+
+    // Single parameter arrow function
+    const square = num => {
+      return num * num;
+    };
+
+    // Concise arrow function
+    const cube = num => num * num * num;
+
+    function runArrowFunction() {
+      const divResult = divide(100, 4);
+      const sqResult = square(9);
+      const cbResult = cube(3);
+
+      console.log("Arrow functions results:", divResult, sqResult, cbResult);
+      displayMessage(`
+        ✅ ARROW FUNCTIONS:
+        100 ÷ 4 = ${divResult} |
+        9² = ${sqResult} |
+        3³ = ${cbResult}
+      `);
+    }
+
+    // ============================================
+    // 8. SELECTION & CONTEXT METHODS
+    // ============================================
+    console.log("=== DOM Selection Methods ===");
+
+    function demonstrateSelection() {
+      // getElementById (single element)
+      const timeEl = document.getElementById('timeDisplay');
+      console.log("getElementById result:", timeEl);
+
+      // querySelector (CSS selector - single)
+      const container = document.querySelector('.container-custom');
+      console.log("querySelector result:", container);
+   
+      // querySelectorAll (multiple elements)
+      const allButtons = document.querySelectorAll('button'); // Finds all the '<button>' elements on the page it is a better selector option because it uses NodeList for .forEach() method for interation 
+      console.log("querySelectorAll - Total buttons:", allButtons.length); // The .length property will return the total count of matching elements (7 buttons)
+
+      /*
+        ITERATE THROUGH ALL BUTTONS USING .forEach() METHOD
+        forEach() is a loop that executes a function for each element in the NodeList, (btn, index) => parameters: 'btn' is current button, 'index' is position (0, 1, 2...)
+      */
+      allButtons.forEach((btn, index) => { 
+        console.log(`Button ${index + 1}:`, btn.textContent); // index + 1: Converts 0-based index to 1-based numbering for readability,index 0 becomes button 1, index 1 becomes button 2, etc.
+      });
+
+      // getElementsByClassName (multiple)
+      const btnClass = document.getElementsByClassName('btn-custom');
+      console.log("getElementsByClassName - Custom buttons count:", btnClass.length);
+
+      // Context method: this keyword
+      // Create an object for the context box 
+      const obj = {
+        name: "Context Object",
+        // showContext holds a function stored as an object property
+        showContext: function () { 
+          console.log("'this' context:", this); // 'this' refers to the 'obj' object because the method is called on it
+          console.log("Object name via 'this':", this.name); // this.name' accesses the 'name' property of the object
+        }
+      };
+
+      // Call the method on the object - this makes 'this' = obj
+      obj.showContext();
+
+      
+      displayMessage(`
+        ✅ DOM SELECTION RESULTS:
+        Elements found by ID: 1
+        Elements found by querySelector: 1
+        Elements found by querySelectorAll: ${allButtons.length}
+        Elements found by className: ${btnClass.length}
+        (Check console for detailed results)
+      `);
+    }
+
+    // ============================================
+    // HELPER FUNCTION FOR DISPLAYING MESSAGES
+    // ============================================
+    function displayMessage(message) {
+      const outputArea = document.getElementById('outputArea');
+      const div = document.createElement('div');
+      div.className = 'console-output';
+      div.textContent = message;
+      outputArea.innerHTML = '';
+      outputArea.appendChild(div);
+    }
+
+    // ============================================
+    // INITIALIZATION
+    // ============================================
+    console.log("=== Page Initialized ===");
+    console.log("All functions are ready to use!");
+    console.log("Click the buttons above to test different JavaScript concepts");
+
+    displayCurrentTime();
+  </script>
+</body>
+
+</html>
