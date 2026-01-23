@@ -3,7 +3,7 @@
 1. When would you use a for loop?
 2. When would you use a while loop?
 3. When would you use a do while loop?
-4. HOw can you avoid an infinite loop?
+4. How can you avoid an infinite loop?
 
 ## Exercices
 
