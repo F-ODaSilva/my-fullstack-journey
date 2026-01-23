@@ -4,9 +4,9 @@
 These scripts can be added to an HTML file using the `<script>` tag, it is recommended to place it before the `</body>` tag this is where all the logic is stored and functions.
 This logic can be externally linked if its too extense, by adding an attribute called `src` where the name of the JavaScript file is stored.
 
-```JS
-    <script src="script.js"></script>
-```
+    ```JS
+        <script src="script.js"></script>
+    ```
 
 2. Scope is programming language terminology that serves as a guide to our program in coraltion to our variables visibility, meaning that it is connected to the positionting of our variables.
 There are mainly five types of scope, but the most commonly used  are three:
@@ -40,8 +40,8 @@ Hoisting the function decloration the function can be called before it it is wri
     6. Using the same variable set a `class` using the method `.setAttribute('class', 'hero list-item')`;
     7. Use the variable `listItem` we apply the method `.textContent` (to add content string/text content to the `<li>` element) and set the array equally to it giving it the same name as the parameter so it can be used later on;
     8. Return the `heroName` using the keyword `return`;
-    9. Loop thorugh the array `marvelHeroes` using a `.forEach(hero)` the (hero will work as a argument later representing the current individual string being processed from the array); 
-    10. Then we use the function `addListItem(hero)` assing in it to a variable using `const` with the name of `newLi`; 
+    9. Loop thorugh the array `marvelHeroes` using a `.forEach(hero)` the (hero will work as a argument later representing the current individual string being processed from the array);
+    10. Then we use the function `addListItem(hero)` assing in it to a variable using `const` with the name of `newLi`;
     11. We add this new list item(`newLi`) to the `listContainer`(`<ul>`) by using the method `.appendChild(newLi)`. We finally close the function;
     12. The last and final step is to append this this list container to the DOM, using `document.body.appendChild(listContainer)`.
 8. The best way to modify/manipulate attributes are the following:
@@ -50,7 +50,7 @@ Hoisting the function decloration the function can be called before it it is wri
     * **.toggle()**
     * **replace()**
 9. You style an HTML element by first assign this element to a variable (for better readability and organization) and use the method `.style()`, inside the brackets we can use CSS properties and syntax but wrapped arround `''` or `""`. `listContainer.style("background-color: salmon")`;
-10. Three usedul event object handlers are the following: 
+10. Three usedul event object handlers are the following:
     * e.target
     * e.type
     * e.preventDefault
