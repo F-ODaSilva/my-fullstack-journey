@@ -9,8 +9,7 @@
 7. Describe a step-by-step process of creating a new `<li>` element, adding text content to it, and appeding it to an existing `<ul>` in the DOM.
 8. What is the best way of modifying attributes and classes? Which is generally considered best practices?
 9. How do you style an element using JavaScript, plus how do you modify an CSS property with an hyphen such as `background-color`?
-10. What is traversing and how would you traverse through a parent element from?
-11. The Event Object: When an event is triggered, an event (or e) object is passed to the handler. Name three useful properties or methods found on this object and explain what they do.
+10. The Event Object: When an event is triggered, an event (or e) object is passed to the handler. Name three useful properties or methods found on this object and explain what they do.
 
 ## Exercices
 
