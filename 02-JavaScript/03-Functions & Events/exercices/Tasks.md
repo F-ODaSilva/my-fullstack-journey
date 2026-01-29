@@ -16,9 +16,7 @@
 ### Task 1
 
 * Create a basic HTML file called task1.html with a few headings, paragraphs,
-forms, and images. Ensure that each item has an ID assigned to it. Create a
-JavaScript file called task1.js. Save both task1.html and task1.js in a
-directory called “Task 1” within the “Compulsory Tasks” directory.
+forms, and images. Ensure that each item has an ID assigned to it. Create a JavaScript file called task1.js. Save both task1.html and task1.js in a directory called “Task 1” within the “Compulsory Tasks” directory.
 Create buttons to do the following:
   * Change the size of a heading
   * Change the font style of a paragraph
