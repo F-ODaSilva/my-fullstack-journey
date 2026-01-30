@@ -1,5 +1,46 @@
-body{
-    margin: 0; 
-    background-color: #E1BEE7;
-    font-family: "QuickSand";
+body {
+    background-color: rgb(10, 10, 10);
+    font-family: "Quicksand", "Roboto";
+    margin: 0;
+    color: rgb(230, 230, 230);
+}
+
+#mainContainer {
+    .box-container {
+        .col.rounded-start-4 {
+            background-color: lightblue;
+            color: gray;
+        }
+
+        .col.rounded-end-4 {
+            background-color: lightpink;
+            color: gray;
+        }
+
+        .row.mx-auto.my-3 {
+            small.descrip {
+                font-weight: 600;
+                font-style: italic;
+            }
+
+            .d-flex.mx-auto {
+                button.btn.btn-sm {
+                    background: linear-gradient(90deg, #07aeea 0.000%, #2bf598 100.000%);
+                    text-transform: capitalize;
+                    transition: 0.5s;
+                    background-size: 150% auto;
+                    color: white;
+                    box-shadow: 0 0 2.5px #eee;
+                    border-radius: 10px;
+                    display: block;
+                }
+
+                button.btn.btn-sm:hover {
+                    background-position: right center;
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
 }
