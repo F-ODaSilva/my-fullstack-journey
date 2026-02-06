@@ -27,7 +27,7 @@ body {
                 button.btn.btn-sm {
                     background: linear-gradient(90deg, #07aeea 0.000%, #2bf598 100.000%);
                     text-transform: capitalize;
-                    transition: 0.5s;
+                    transition: 0.5s;           
                     background-size: 150% auto;
                     color: white;
                     box-shadow: 0 0 2.5px #eee;
