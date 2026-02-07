@@ -47,6 +47,7 @@ ${userName} ${checkBoxResolve(isReady)}
     alert(message);
 }
 
+// CHANGING THE SIZES AND STYLES OF ELEMENTS (Headings & Paragraphs) 
 /*
 When having several elements with the same class its more complex than what we are used to, because ".querySelector/.querySelectorAll" returns a NodeList, in this case, having several elements of the same class, it will return a list/array of all of these elements, so it wont apply any "changes" you want it to do/happen. Because its not considering the element one by one.
 
@@ -97,3 +98,47 @@ function changeParaStyle() {
         para.style.color = "black";
     }
 }
+
+// HIGHLIGHTING ALL PARAGRAPHS WHEN MOUSE MOVES OVER
+/* 
+It is really a straight forward task that could be done in CSS but in order to make this work in JavaScript you would be doing we must understand the following things:
+    1. We would have to write all the event handlers inside the html document and create ids for all of them (that would be teadious);
+    2. Because we are basically hovering on them there is no way that a button can be used;
+    3. Even if we run a forEach for it will only make the paragraphs higlight in real time as the document loads
+So whats the solution here? Create an event listener that will "listen" to the actions we are expecting to happen when these elements are interacted.
+This helps us keep not only our code clean but the whole logic shorter and easier to manage. Even if there are more elements being added later through out the exercise we just need to add the respective class to it.
+*/
+
+// 1. Create the variable that holds all the <p> elements with the class of para with .querySelectorAll() method 
+let highlightPara = document.querySelectorAll("p.para");
+
+// 2. Go through all the elements and make each one become p   
+highlightPara.forEach(p => {
+    // 3. Using the parameter p create the event listener that will trigger the initial action/function (mouseenter)
+    p.addEventListener("mouseenter", () => {  // 4. Use an arrow function to be more direct instead of creating a separate function inside the function (better for readability)
+        p.style.backgroundColor = "yellow"; // 5. Change background-color
+        p.style.color = "black"; // 6. Chnage font color
+        console.log("Paragraph has been highleted."); // 7. Check if its working
+    });
+    // 8. Create another event listener that will reverse the changes applied previously
+    p.addEventListener("mouseleave", () => {
+        p.style.backgroundColor = "";
+        p.style.color = "";
+    })
+});
+
+// PRO TIP
+/*
+Insted ofcreating all of these methods just to chage the style one can use the CSS file and create a class (.highlight) and set the desired styles. Back inside out JavaScript file we would write the event listener shorter. Like this:
+
+highlightPara.forEach(p => {
+    p.addEventListener("mouseenter", () => {
+        p.classList.add("highlight");
+    });
+
+    p.addEventListener("mouseleave", () => {
+        p.classList.remove("highlight");
+    });
+});
+
+*/
