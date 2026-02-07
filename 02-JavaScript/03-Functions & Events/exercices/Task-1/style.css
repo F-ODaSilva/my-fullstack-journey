@@ -6,6 +6,33 @@ body {
 }
 
 #mainContainer {
+    margin-top: 3rem;
+    
+    /* GENERAL STYLES */
+    /* Buttons */
+    button.btn.btn-sm {
+        background: linear-gradient(90deg, #0766ea 0.2%, #17ed89 100%);
+        text-transform: capitalize;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;
+        box-shadow: 0 0 2.5px #eee;
+        border-radius: 10px;
+        display: block;
+    }
+
+    button.btn.btn-sm:hover {
+        background-position: right center;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    /* FORM SECTION */
+    .container>form.row.g-3 {
+        
+    }
+
+    /* BOX SECTION  */
     .box-container {
         .col.rounded-start-4 {
             background-color: lightblue;
@@ -22,25 +49,21 @@ body {
                 font-weight: 600;
                 font-style: italic;
             }
-
-            .d-flex.mx-auto {
-                button.btn.btn-sm {
-                    background: linear-gradient(90deg, #07aeea 0.000%, #2bf598 100.000%);
-                    text-transform: capitalize;
-                    transition: 0.5s;           
-                    background-size: 150% auto;
-                    color: white;
-                    box-shadow: 0 0 2.5px #eee;
-                    border-radius: 10px;
-                    display: block;
-                }
-
-                button.btn.btn-sm:hover {
-                    background-position: right center;
-                    color: #fff;
-                    text-decoration: none;
-                }
-            }
         }
     }
+
+    /* IMAGE SECTION */
+    #imageContainer{
+        .card-img-top{
+            height: 300px;
+        }
+    }
+
+
+
+
+
+
+
+
 }
