@@ -10,15 +10,15 @@ window.onload = function () {
 /*
     Here we will create a function that will retrive the forms user data and alert it alongside dispalying it in the console. Forms are an important part of the development journey because it is insde there you collect data, manipulate it, and reuse them. It has a lot of logic behind it due to validation. So we must go step by step to ensure the best experience possible not only for the users but for developers too.
 */
-// 1. Create some of the variables that we will be using globally through out the page
-let userName = document.getElementById("userName").value;
-let lastName = document.getElementById("userLastName").value;
-let occupation = document.getElementById("userOcuppation").value;
 
-// 2. Create the function
+// 1. Create the function
 function handleForm(event) {
-    // 3 . Create method that prevents the browser from reloading when user clicks on submit.
+    // 2 . Create method that prevents the browser from reloading when user clicks on submit.
     event.preventDefault();
+    // 1. Create some of the variables that we will be using globally through out the page
+    let userName = document.getElementById("userName").value;
+    let lastName = document.getElementById("userLastName").value;
+    let occupation = document.getElementById("userOcuppation").value;
     // 4. Create variabales that retrieve the values form the select boxes
     let yearsPro = document.getElementById("yearsProgramming").value;
     let interest = document.getElementById("workArea").value;
