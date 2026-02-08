@@ -90,14 +90,24 @@ Another simpler and more clear way of doing this is by using the for...of loop, 
 // FOR ... OF LOOP
 // 1. Create function
 function changeParaStyle() {
-    let paragrahps = document.querySelectorAll(".heading .para.change");
+    let paragraphs = document.querySelectorAll(".text-justify.para.change");
 
     for (let para of paragraphs) {
-        para.style.fontWeight = "200"; //4.  Change the font weight of the element
-        para.style.textAlign = "justify";
+        para.style.fontWeight = "400"; //4.  Change the font weight of the element
         para.style.color = "black";
+        para.classList.remove("text-justify"); // 5. Remove class from the element so the next can be added and functional 
+        para.style.textAlign = "center";
     }
 }
+
+// CHANGE BOX STYLE
+function changeBoxStyle() {
+    let boxes = document.querySelectorAll(".col.h-100.w-50.py-3");
+    
+    boxes.forEach((box) => {
+        box.style.backgroundColor = "whitesmoke";
+    })
+} 
 
 // HIGHLIGHTING ALL PARAGRAPHS WHEN MOUSE MOVES OVER
 /* 
@@ -142,3 +152,12 @@ highlightPara.forEach(p => {
 });
 
 */
+
+// HIDE BACKGROUND IMAGE
+function deleteBackground(){
+    // 1. Create variable that encapsulates the background image
+    let background = document.querySelector("div.background");
+
+    // 2. Remove the background-image  using the method mentioned before .classList.remove
+    background.classList.remove("background"); // the correct way is to name the class without the css syntax (.className) 
+}
