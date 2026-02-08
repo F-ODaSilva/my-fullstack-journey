@@ -1,14 +1,24 @@
 body {
-    background-color: rgb(10, 10, 10);
+    background-color: #0a0a0a;
     font-family: "Quicksand", "Roboto";
     margin: 0;
     color: rgb(230, 230, 230);
 }
 
+.background {
+    background-image: url("images/bgImage.jpg");
+    background-size: cover;
+}
+
 #mainContainer {
+    /* START OF THE CONTAINER */
     margin-top: 3rem;
     
     /* GENERAL STYLES */
+    /* Paragraphs */
+    p.para{
+        width: auto;
+    }
     /* Buttons */
     button.btn.btn-sm {
         background: linear-gradient(90deg, #0766ea 0.2%, #17ed89 100%);
@@ -20,7 +30,7 @@ body {
         border-radius: 10px;
         display: block;
     }
-
+    /* Buttons Hovered */
     button.btn.btn-sm:hover {
         background-position: right center;
         color: #fff;
@@ -28,8 +38,15 @@ body {
     }
 
     /* FORM SECTION */
-    .container>form.row.g-3 {
-        
+    /* Paragraph Alignment */
+    .row.intro-form{
+        p.para{
+            padding: 0;
+            margin-left: 10px;
+            text-align: start;
+            /* background-color: yellow; */
+            width: auto;
+        }
     }
 
     /* BOX SECTION  */
