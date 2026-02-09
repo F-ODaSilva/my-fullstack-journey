@@ -161,3 +161,45 @@ function deleteBackground(){
     // 2. Remove the background-image  using the method mentioned before .classList.remove
     background.classList.remove("background"); // the correct way is to name the class without the css syntax (.className) 
 }
+
+// ALTERNATE IMAGES 
+/*
+Here I will create an event that will be triggered the moment the user hovers the mouse on top of an image making it alternate to a different image and back to the old image when the user moves the muse out of the is element. 
+Using my previous knowledge it is a farely easy task but with some minor caviats.
+This time I wont use an event handler but an event listener insted because to get more use to this method instead of going back and forth files
+*/ 
+
+// 1. Create variable that will retrive the image element
+const altImage = document.querySelector("#imageContainer img.card-img-top");
+// 2. Create the event listener that will alter the image when user hovers the mouse on top of the element
+altImage.addEventListener("mouseenter", () => {
+    // alert("User has hovered an image!"); // 3. Create an alert that will 
+    altImage.src = "images/desktop-2.jpg"; // 4. Change image using the method ".src" and select the image from the file tree
+    console.log(`${userName} hovered and altered image`); // 5. Console.log message with the user data from form.
+}) 
+// 6. Create the event listener that reverts the image back to its original
+altImage.addEventListener("mouseleave", () => { 
+    altImage.src ="images/desktop.jpg" 
+})
+
+// ALERT WHEN USER RIGHT-CLICKS AN IMAGE
+/*
+As the title implies an alert will be displayed as soon as the event  (mouser right button) is triggered this will using the method above it is easier and more efficient than going back and forth files 
+*/ 
+
+// 1. Create variable tha t holds the element we want the event to occur
+// Knowing that we have two elements with the same class inside the same parent container we use advanced selectors to help us idetify and manipiulate the desired element. The simpler and fastest way is to use the following method bellow
+const imageRClick = document.querySelector("#imageContainer img.card-img-top.last") // last-of-type will look for the last item of its type
+/*
+But imagine we have a lot of images with the same class (6), how would we go by doing this. We use .querySelectorAll to create a NodeList and then retrive the item we want. Here is an example:
+    1. const elementGroup = docuemnt.querySelectorAll("#elementContainer element.class");
+    2. let wantedElement = elementGroup[2] // 3rd element
+    3. let lastElement = elementGroup[elementGroup.lenght-5] // last element
+Keep in mind that an array index starts with 0 
+*/ 
+// 2. Create the event listener
+imageRClick.addEventListener("contextmenu", (event) => {
+    // 3. Prevent default contextmenu be dispalyed when event triggers so further action can be triggered
+    event.preventDefault();
+    alert("You slected the laptop setup!");
+}) 
