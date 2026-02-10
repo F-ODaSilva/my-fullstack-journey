@@ -1,0 +1,45 @@
+body {
+    font-family:'Quicksand';
+}
+
+.calc.mb-4{
+    span.input-group-text{
+        font-weight: bolder;
+    }
+    .form-control{
+        font-weight: 400;
+        font-style: italic;
+    }
+    button{
+        font-weight: bolder;
+        color: whitesmoke ;
+    }
+}
+
+.calc.mb-4.add{
+    button{
+        background-color:lightskyblue;
+        border-color: lightskyblue;
+    }
+}
+
+.calc.mb-4.mul{
+    button{
+        background-color:limegreen;
+        border-color: limegreen;
+    }
+}
+
+.calc.mb-4.div{
+    button{
+        background-color:lightcoral;
+        border-color: lightcoral;
+    }
+}
+
+.calc.mb-4.mod{
+    button{
+        background-color:sienna;
+        border-color: sienna;
+    }
+}

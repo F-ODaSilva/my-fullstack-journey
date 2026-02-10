@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon (standard browsers) -->
+    <link rel="icon" type="image/x-icon" href="../../../favicon_io/favicon.ico">
+
+    <!-- PNG Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon_io/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon_io/favicon-32x32.png">
+
+    <!-- Android / Chrome -->
+    <link rel="icon" type="image/png" sizes="192x192" href="../../../favicon_io/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../../../favicon_io/android-chrome-512x512.png">
+
+    <!-- Apple devices -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../favicon_io/apple-touch-icon.png">
+
+    <!-- Theme color (optional but nice for mobile browsers) -->
+    <meta name="theme-color" content="#0a0a0a">
+
+    <!-- GOOGLE  FONTS CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- BOOSTRAP 5 CDN LINK-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS STYLESHEET -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-black bg-gradient">
+
+    <div class="container align-content-center min-vh-100 py-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+
+                <div class="bg-secondary bg-gradient card shadow-lg p-4">
+                    <h2 class="text-center mb-4 text-light">Basic Math Calculator</h2>
+
+                    <!-- ADDITION -->
+                    <div class="calc mb-4 add" data-op="add"> 
+                        <div class="input-group">
+                            <input type="number" class="form-control" placeholder="Number 1">
+                            <span class="input-group-text">+</span>
+                            <input type="number" class="form-control" placeholder="Number 2">
+                            <button class="btn btn-primary">=</button>
+                        </div>
+                        <div class="result text-end fw-bold mt-2"></div>
+                    </div>
+
+                    <!-- MULTIPLICATION -->
+                    <div class="calc mb-4 mul" data-op="mul">
+                        <div class="input-group">
+                            <input type="number" class="form-control" placeholder="Number 1">
+                            <span class="input-group-text">×</span>
+                            <input type="number" class="form-control" placeholder="Number 2">
+                            <button class="btn btn-success">=</button>
+                        </div>
+                        <div class="result text-end fw-bold mt-2"></div>
+                    </div>
+
+                    <!-- DIVISION -->
+                    <div class="calc mb-4 div" data-op="div">
+                        <div class="input-group">
+                            <input type="number" class="form-control" placeholder="Number 1">
+                            <span class="input-group-text">:</span>
+                            <input type="number" class="form-control" placeholder="Number 2">
+                            <button class="btn btn-danger">=</button>
+                        </div>
+                        <div class="result text-end fw-bold mt-2"></div>
+                    </div>
+
+                    <!-- MODULUS -->
+                    <div class="calc mb-4 mod" data-op="mod">
+                        <div class="input-group">
+                            <input type="number" class="form-control" placeholder="Number 1">
+                            <span class="input-group-text">%</span>
+                            <input type="number" class="form-control" placeholder="Number 2">
+                            <button class="btn btn-warning">=</button>
+                        </div>
+                        <div class="result text-end fw-bold mt-2"></div>
+                    </div>
+
+                    <button id="clearAll" class="btn btn-primary w-100 fw-bold">Clear All</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="task2.js"></script>
+</body>
+</html>
