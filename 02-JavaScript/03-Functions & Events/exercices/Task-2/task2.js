@@ -1,8 +1,6 @@
 // MATH CALCULATOR SYSTEM
 /*
-    Here we will create a system that allows the user to perform basic math operations.
-    Instead of creating one function per operation, we will build a smart structure
-    that reads what operation should be done directly from the HTML using data attributes.
+    Here we will create a system that allows the user to perform basic math operations. Instead of creating one function per operation, we will build a smart structure that reads what operation should be done directly from the HTML using data attributes.
     This makes the code cleaner, more professional, reusable, and easier to scale.
 */
 
@@ -22,23 +20,23 @@ calculators.forEach(calc => {
         // 5. Get both number inputs inside this calculator block
         let inputs = calc.querySelectorAll("input");
 
-        // 6. Convert input values from TEXT into NUMBERS
+        // 6. Create variables that will hold the inputs and convert the values of these inputs from TEXT into NUMBERS
         // parseFloat is necessary because inputs always return strings
         let num1 = parseFloat(inputs[0].value);
         let num2 = parseFloat(inputs[1].value);
 
         let result;
 
-        // 7. Validate numbers before calculating
-        if (isNaN(num1) || isNaN(num2)) {
-            result = "Enter valid numbers";
+        // 7. Validate numbers before calculating by using a conditional expression with || (OR)
+        if (isNaN(num1) || isNaN(num2)) { // isNaN is a built-in  javascript function that checks if if the argument inside is a number or not (is Not a Number )
+            result = "Enter valid numbers"; // if they are not numbers  message is displayed
         } else {
 
             // 8. Decide which operation to execute
-            if (operation === "add") result = num1 + num2;
-            if (operation === "mul") result = num1 * num2;
-            if (operation === "div") result = num2 !== 0 ? num1 / num2 : "Cannot divide by 0";
-            if (operation === "mod") result = num1 % num2;
+            if (operation === "add") result = "Result: " + num1 + num2;
+            if (operation === "mul") result = "Result: " + num1 * num2;
+            if (operation === "div") result = "Result: " + num2 !== 0 ? num1 / num2 : "Cannot divide by 0"; // short if statement that chekcs if user entered a value with 0 
+            if (operation === "mod") result = "Result: " + num1 % num2;
         }
 
         // 9. Display result in the result div of that specific calculator
@@ -52,7 +50,6 @@ calculators.forEach(calc => {
     This section resets the calculator by clearing all inputs and results.
     This improves user experience and keeps the interface clean.
 */
-
 // 10. Select the Clear All button
 let clearBtn = document.getElementById("clearAll");
 

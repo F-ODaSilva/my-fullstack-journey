@@ -6,10 +6,6 @@ body {
     span.input-group-text{
         font-weight: bolder;
     }
-    .form-control{
-        font-weight: 400;
-        font-style: italic;
-    }
     button{
         font-weight: bolder;
         color: whitesmoke ;
@@ -21,12 +17,20 @@ body {
         background-color:lightskyblue;
         border-color: lightskyblue;
     }
+    .result {
+        margin: auto 140px;
+        background-color: lightskyblue !important;
+    }
 }
 
 .calc.mb-4.mul{
     button{
         background-color:limegreen;
         border-color: limegreen;
+    }
+    .result {
+        margin: auto 140px;
+        background-color: limegreen !important;
     }
 }
 
@@ -35,11 +39,19 @@ body {
         background-color:lightcoral;
         border-color: lightcoral;
     }
+    .result {
+        margin: auto 140px;
+        background-color: lightcoral !important;
+    }
 }
 
 .calc.mb-4.mod{
     button{
         background-color:sienna;
         border-color: sienna;
+    }
+    .result {
+        margin: auto 140px;
+        background-color: sienna !important;
     }
 }
