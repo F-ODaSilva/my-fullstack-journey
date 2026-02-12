@@ -1,0 +1,20 @@
+body {
+    min-height: 100vh;
+    font-family:'Quicksand';
+}
+
+.calculator-btn {
+    height: 60px;
+    font-size: 1.2rem;
+}
+
+#calculatorBox {
+    .calculator-btn.btn-dark{
+        background-color: darkgrey !important;
+        border: none !important;
+    }
+    .calculator-btn.btn-danger{
+        background-color: lightseagreen !important;
+        border: none !important;
+    }
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon (standard browsers) -->
+    <link rel="icon" type="image/x-icon" href="../../../favicon_io/favicon.ico">
+
+    <!-- PNG Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon_io/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon_io/favicon-32x32.png">
+
+    <!-- Android / Chrome -->
+    <link rel="icon" type="image/png" sizes="192x192" href="../../../favicon_io/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../../../favicon_io/android-chrome-512x512.png">
+
+    <!-- Apple devices -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../favicon_io/apple-touch-icon.png">
+
+    <!-- Theme color (optional but nice for mobile browsers) -->
+    <meta name="theme-color" content="#0a0a0a">
+    
+    <!-- GOOGLE  FONTS CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- BOOTSTRAP 5 CDN LINK -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS STYLESHEET -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="bg-dark">
+
+    <div class="container-fluid min-vh-100 p-4">
+        <div class="row h-100 g-3">
+
+            <!-- LEFT COLUMN -->
+            <div class="col-12 col-lg-6 d-flex flex-column gap-3">
+
+                <!-- FORM BOX -->
+                <div id="formBox" class="bento-box rounded-3 bg-light py-2 px-4 shadow text-dark">
+                    <h3 id="formHeading">User Information Form</h3>
+                    <p id="formPara">Fill in the form below.</p>
+
+                    <form id="userForm">
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            <input type="text" id="nameInput" class="form-control shadow-sm">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" id="emailInput" class="form-control shadow-sm">
+                        </div>
+
+                        <button id="formBtn" type="button" class="btn btn-primary w-100">Submit</button>
+                    </form>
+                </div>
+
+                <!-- COUNTER BOX -->
+                <div id="counterBox" class="bento-box rounded-3 bg-light py-2 px-4 shadow text-dark text-center d-block w-50 mx-auto">
+                    <h4 id="counterHeading">Button Click Counter</h4>
+                    <p id="counterValue" class="display-6">0</p>
+                    <button id="counterBtn" class="btn btn-warning">Click Me</button>
+                </div>
+
+                <!-- CURRENCY CONVERTER -->
+                <div id="currencyBox" class="bento-box rounded-3 bg-light py-2 px-4 shadow text-dark">
+                    <h4 id="currencyHeading">Rand Converter</h4>
+                    <input id="randInput" type="number" class="form-control shadow-sm mb-3" placeholder="Enter Rands">
+                    <button id="convertBtn" class="btn btn-success w-100 mb-3">Convert</button>
+
+                    <p id="usdOutput" class="currency mb-2">USD: </p>
+                    <p id="eurOutput" class="currency mb-2">EUR: </p>
+                    <p id="gbpOutput" class="currency mb-2">GBP: </p>
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="col-12 col-lg-6 align-content-center">
+
+                <!-- CALCULATOR -->
+                <div id="calculatorBox" class="bento-box rounded-3 bg-light p-4 shadow text-dark h-auto d-flex flex-column">
+                    <h3 id="calcHeading" class="text-center">Calculator</h3>
+
+                    <input id="calcDisplay" type="text" class="form-control shadow-sm mb-3 text-end fs-4" readonly>
+
+                    <div class="row g-2 flex-grow-1">
+
+                        <div class="col-3"><button id="btn7" class="btn btn-dark w-100 calculator-btn">7</button></div>
+                        <div class="col-3"><button id="btn8" class="btn btn-dark w-100 calculator-btn">8</button></div>
+                        <div class="col-3"><button id="btn9" class="btn btn-dark w-100 calculator-btn">9</button></div>
+                        <div class="col-3"><button id="btnDivide" class="btn btn-danger w-100 calculator-btn">÷</button>
+                        </div>
+
+                        <div class="col-3"><button id="btn4" class="btn btn-dark w-100 calculator-btn">4</button></div>
+                        <div class="col-3"><button id="btn5" class="btn btn-dark w-100 calculator-btn">5</button></div>
+                        <div class="col-3"><button id="btn6" class="btn btn-dark w-100 calculator-btn">6</button></div>
+                        <div class="col-3"><button id="btnMultiply"
+                                class="btn btn-danger w-100 calculator-btn">×</button></div>
+
+                        <div class="col-3"><button id="btn1" class="btn btn-dark w-100 calculator-btn">1</button></div>
+                        <div class="col-3"><button id="btn2" class="btn btn-dark w-100 calculator-btn">2</button></div>
+                        <div class="col-3"><button id="btn3" class="btn btn-dark w-100 calculator-btn">3</button></div>
+                        <div class="col-3"><button id="btnMinus" class="btn btn-danger w-100 calculator-btn">−</button>
+                        </div>
+
+                        <div class="col-3"><button id="btn0" class="btn btn-dark w-100 calculator-btn">0</button></div>
+                        <div class="col-3"><button id="btnDot" class="btn btn-dark w-100 calculator-btn">.</button>
+                        </div>
+                        <div class="col-3"><button id="btnEqual" class="btn btn-success w-100 calculator-btn">=</button>
+                        </div>
+                        <div class="col-3"><button id="btnPlus" class="btn btn-danger w-100 calculator-btn">+</button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
